@@ -50,17 +50,17 @@ public class Dong : MonoBehaviour
     /// </summary>
     void lep()
     {
-            points = GetB.v2;
+        points = GetB.v2;
         if (boo)
-        {    
-          GetB.objindex[Yesm] = idx;
+        {
+            GetB.objindex[Yesm] = idx;
 
 
             if (this.transform.position == points[idx])//完成目标后分配其他目标
             {
                 GetB.z1++;
                 Debug.Log(GetB.z1);
-                     boo = false;
+                boo = false;
                 idx++;
                 if (idx == GetB.v2.Length)
                 {
@@ -102,18 +102,19 @@ public class Dong : MonoBehaviour
         //    boo = true;
         //}
 
-        if (!boo) 
-        { 
-            if (GetB. updatpos() )
+        if (!boo)
         {
-            boo = true;
-        }
+            if (GetB.updatpos())
+            {
+                boo = true;
+            }
         }
 
     }
     private void LateUpdate()
     {
-        lep();
+        if (GetB.ON_OFF)
+            lep();
 
         //if (zt == 1&&GetB.z1<GetB.v2.Length)
         //{  

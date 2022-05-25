@@ -5,6 +5,7 @@ using UnityEngine;
 public class B : MonoBehaviour
 {
     //
+    public bool ON_OFF = true;
     public int pos = 0;
     public int pos1;
     public float speed;
@@ -100,24 +101,24 @@ public class B : MonoBehaviour
     }
     public bool updatpos()
     {
-        
-            if (z1 >= v2.Length)
-            {
 
-                for (int i = 0; i < v2.Length; i++)
-                {
-                    scobj[i].transform.position = v2[objindex[i]];
-                }
-                z1 = 0;
-            tim = 0;
-            }
-            switch (z1)
+        if (z1 >= v2.Length)
+        {
+
+            for (int i = 0; i < v2.Length; i++)
             {
-                case 0:   
-                    return true;
-                default:
-                    return false;
+                scobj[i].transform.position = v2[objindex[i]];
             }
+            z1 = 0;
+            tim = 0;
+        }
+        switch (z1)
+        {
+            case 0:
+                return true;
+            default:
+                return false;
+        }
 
 
     }
